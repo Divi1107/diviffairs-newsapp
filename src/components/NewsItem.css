@@ -1,0 +1,83 @@
+/* Card Styles */
+.card {
+    height: 450px;
+    object-fit: cover;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.009,1.009);
+    box-shadow:5px 5px 25px 0.2px rgb(195, 189, 189);
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  /* Badge Styles */
+  .badge {
+    font-size: 10px;
+    padding: 1.1%;
+    margin-left:10px;
+  }
+  .badge:hover{
+    transform: translateY(-0.9px);
+  }
+  
+  /* Card Footer */
+  .card-footer {
+    white-space: normal;
+    word-wrap: break-word;
+    background-color: #f8f9fa;
+    padding: 10px;
+  }
+  
+  /* Text Styles */
+  .text-body-secondary {
+    color: #6c757d;
+    font-size: 0.875rem;
+  }
+  
+  /* Button Styles for Light Mode */
+  .btn-outline-dark {
+    border: 1px solid #343a40;
+    color: #343a40;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  /* Button Styles for Dark Mode */
+  .btn-outline-light {
+    border: 1px solid #f8f9fa;
+    color: #f8f9fa;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  /* Dark Mode Card Background */
+  .dark-mode .card {
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+  
+  .light-mode .card {
+    background-color: #fff;
+    color: #343a40;
+  }
+  

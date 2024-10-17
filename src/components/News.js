@@ -15,10 +15,12 @@ const News = (props) => {
   News.propTypes = {
     category: PropTypes.string,
   }
- 
+ const capitalize = (str) => {
+    return str.charAt(0).toUpperCase()+str.slice(1) ;
+ }
   const updateNews = async() =>{
      props.setProgress(0)
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=583991ae9f3a4f14ac80dfbe8b02fdbd&page=1&pageSize=${ props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=4760e465a2714319abe8129809743b56&page=1&pageSize=${props.pageSize}`;
      //setState({Spinner:true});
      setloading(true);
     let data = await fetch(url);
@@ -33,7 +35,7 @@ const News = (props) => {
     setloading(false) 
   }
   useEffect(() => {
-    document.title = `${props.category} - diviffairs`;
+    document.title = `${capitalize(props.category)} - diviffairs`;
     updateNews();
   },[])
   // async componentDidMount(){
@@ -43,7 +45,7 @@ const News = (props) => {
    const fetchMoreData = async () => { 
     setloading(true)   
     const nextPage = page + 1;
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${ props.category}&apiKey=583991ae9f3a4f14ac80dfbe8b02fdbd&page=${nextPage}&pageSize=${ props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${ props.category}&apiKey=4760e465a2714319abe8129809743b56&page=${nextPage}&pageSize=${ props.pageSize}`;
   
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -58,7 +60,7 @@ const News = (props) => {
     return (
       <>
       <div className='container my-3'>
-        <center><h2 className='text-center' style = {{marginBlock:'90px 25px'}}>diviffairs - Top Headlines - { props.category}</h2></center>
+        <center><h3 className='text-center' style = {{marginBlock:'90px 25px', fontStyle:'bold'}}>Top Headlines - { capitalize(props.category)}</h3></center>
         <center>{ loading && <Spinner/>}</center>
         <InfiniteScroll
           dataLength={articles.length}
