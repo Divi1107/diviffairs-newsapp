@@ -1,1 +1,2 @@
 A reactjs web app to read daily news and keep users updated with the world's most trending news. Uses news api to fetch data from the server. friendly and minimalistic UI with the sole purpose of news reading with simple routing accross various news catergories.
+https://diviffairs-newsapp.vercel.app - yeah u can't see it bcuz the api used is meant for localhost. for deployment i need to pay. byeee
